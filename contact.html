@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NobodyCares</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d7c7ceb8ac.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            
+            <a href="index.html" class="logo">NobodyCares</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+                <script>
+                    const menuToggle = document.querySelector(".menu-toggle");
+                    const navLinks = document.querySelector(".nav-links");
+
+                    menuToggle.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                    });
+                </script>
+                
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="contact">
+            <div class="contact-box">
+                <h2>Send Us a Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" required autocomplete="given-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname" required autocomplete="family-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+
+                    <button id="contact-button" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://instagram.com/pedropassos6" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/pedro-passos-aa0782241/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/pedropassos6" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <p class="copyright">Designed by<span> Pedro Passos</span></p>
+        
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NobodyCares</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d7c7ceb8ac.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">NobodyCares</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+                <script>
+                    const menuToggle = document.querySelector(".menu-toggle");
+                    const navLinks = document.querySelector(".nav-links");
+
+                    menuToggle.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                    });
+                </script>
+                
+            </div>
+        </nav>
+        
+    </header>
+
+    <main class="main-content">
+        <section class="gallery">
+            <img src="pictures/DSCF5542.jpg" alt="Gallery image 1">
+            <img src="pictures/DSCF7180.jpg" alt="Gallery image 2">
+            <img src="pictures/DSCF7202.jpg" alt="Gallery image 3">
+            <img src="pictures/DSCF7297.jpg" alt="Gallery image 4">
+            <img src="pictures/DSCF7298.jpg" alt="Gallery image 5">
+            <img src="pictures/DSCF7317.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7330.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7519.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7603.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF8587.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF8693.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF8695.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9174.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9194.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9207.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9221.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9315.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9318.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9420.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9505.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9535.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9538.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9681.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9696.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7103.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7306.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7414.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7586.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF8845.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF8966.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF8367.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9084.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9495.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF9417.jpg" alt="Gallery image 6">
+            <img src="pictures/DSCF7495.jpg" alt="Gallery image 6">
+            <img src="pictures/IMG_7077_jpg.jpg" alt="Gallery image 6">
+        </section>
+
+        <div class="lightbox" id="lightbox"> <!--this is the fullscreen overlay, hidden by default -->
+            <span class="close">&times;</span> <!-- close button, &times is the X symbol -->
+            <img class="lightbox-img" src="" alt=""> <!--starts empty and javascript inserts the image-->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+
+        <script>
+            const images = document.querySelectorAll('.gallery img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.querySelector('.lightbox-img');
+            const closeBtn = document.querySelector('.close');
+            const nextBtn = document.querySelector('.next');
+            const prevBtn = document.querySelector('.prev');
+
+            let currentIndex = 0;
+
+            function showImage(index) {
+            lightboxImg.src = images[index].src;
+            currentIndex = index;
+            }
+
+            images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                lightbox.classList.add('active');
+                showImage(index);
+            });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+            });
+        </script>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://instagram.com/pedropassos6" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/pedro-passos-aa0782241/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/pedropassos6" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <p class="copyright">Designed by<span> Pedro Passos</span></p>
+        
+    </footer>
+
+</body>
+</html>
