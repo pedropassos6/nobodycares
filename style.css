@@ -434,6 +434,175 @@ textarea:focus {
 
 }
 
+/* BLOG */
+
+.blog{
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+  gap: 40px;
+
+  justify-content: center;
+}
+
+.blog-card a{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.blog-image{
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.blog-image img{
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.blog-card:hover img{
+  transform: scale(1.05);
+}
+
+.blog-content{
+  margin-top: 12px;
+}
+
+.blog-content h3{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  color: #222;
+  text-decoration: none;
+}
+
+.blog-meta{
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.blog-card:hover h3{
+  color: #000;
+}
+
+.blog-card{
+  transition: transform 0.25s ease;
+}
+
+.blog-card:hover{
+  transform: translateY(-4px);
+}
+
+
+/* BLOG PAGE */
+
+.post-container{
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.post-header{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.post-header h1{
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.post-meta{
+  font-size: 13px;
+  color: #777;
+  letter-spacing: 1px;
+}
+
+.post-hero img{
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.post-intro{
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 60px;
+}
+
+.post-section{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.post-section.reverse{
+  flex-direction: row-reverse;
+}
+
+.post-image{
+  flex: 1;
+}
+
+.post-image img{
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.post-text{
+  flex: 1;
+}
+
+.post-text h2{
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.post-text p{
+  color: #555;
+  line-height: 1.6;
+}
+
+.post-conclusion{
+  margin-top: 60px;
+}
+
+.post-conclusion h2{
+  margin-bottom: 10px;
+}
+
+.post-section:hover img{
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px){
+  .post-section{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .post-section.reverse{
+    flex-direction: column;
+  }
+
+  .post-header h1{
+    font-size: 26px;
+  }
+}
+
+
 /* footer */
 
 .footer {
